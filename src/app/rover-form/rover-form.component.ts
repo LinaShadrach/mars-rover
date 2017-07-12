@@ -14,6 +14,11 @@ export class RoverFormComponent {
   photos=null;
   noPhotos=false;
   constructor(private router: Router, private marsRoverPhotos: MarsRoverAPIPhotos) { }
+  saveRoverImages(date, camera){
+    this.marsRoverPhotos.saveImages(date, camera);
+    alert('The images from ' + date + ' taken by the ' + camera + ' camera have been saved to the database.')
+  }
+
   getRoverImages(date: string, camera: string) {
     this.noPhotos = false;
     console.log(date);
