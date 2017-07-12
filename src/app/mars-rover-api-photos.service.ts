@@ -4,7 +4,6 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Photo } from './photo.model';
 import { PhotoService } from './photo.service';
-import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MarsRoverAPIPhotos {
@@ -19,6 +18,7 @@ export class MarsRoverAPIPhotos {
       const responseAsJson = response.json();
       for(let image of responseAsJson.photos) {
         let foundPhoto = new Photo(image.img_src, camera, date);
+        console.log(image.img_src);
         this.photoService.addPhoto(foundPhoto);
       }
     });
