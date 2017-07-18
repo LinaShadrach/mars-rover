@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { masterFirebaseConfig } from './api-keys';
 
 import { Router, RouterModule } from '@angular/router';
+import { UserPhotosListComponent } from './user-photos-list/user-photos-list.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     RoverFormComponent,
-    PhotosListComponent
+    PhotosListComponent,
+    UserPhotosListComponent
   ],
   imports: [
     BrowserModule,
